@@ -1,0 +1,14 @@
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index 5f9cf31dc0b8..2ea7969251ea 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -533,7 +533,8 @@ dtb-$(CONFIG_SOC_IMX6ULL) += \
+ 	imx6ull-9x9-evk.dtb \
+ 	imx6ull-9x9-evk-btwifi.dtb \
+ 	imx6ull-9x9-evk-btwifi-oob.dtb \
+-	imx6ull-9x9-evk-ldo.dtb
++	imx6ull-9x9-evk-ldo.dtb \
++	imx6ull-mys6ulx.dtb
+ dtb-$(CONFIG_SOC_IMX6SLL) += \
+ 	imx6sll-lpddr2-arm2.dtb \
+ 	imx6sll-lpddr3-arm2.dtb \

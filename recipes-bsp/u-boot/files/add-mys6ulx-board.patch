@@ -1,0 +1,41 @@
+diff --git a/arch/arm/dts/Makefile b/arch/arm/dts/Makefile
+index 9607239b03..39bbe6f907 100644
+--- a/arch/arm/dts/Makefile
++++ b/arch/arm/dts/Makefile
+@@ -432,7 +432,9 @@ dtb-$(CONFIG_MX6UL) += \
+ 	imx6ul-isiot-nand.dtb \
+ 	imx6ul-opos6uldev.dtb
+ 
+-dtb-$(CONFIG_MX6ULL) += imx6ull-14x14-evk.dtb
++dtb-$(CONFIG_MX6ULL) += \
++	imx6ull-14x14-evk.dtb \
++	imx6ull-mys6ulx.dtb
+ 
+ dtb-$(CONFIG_MX7) += imx7-colibri.dtb \
+ 	imx7d-sdb.dtb
+diff --git a/arch/arm/mach-imx/mx6/Kconfig b/arch/arm/mach-imx/mx6/Kconfig
+index 388d2a2069..6ddbbff1b6 100644
+--- a/arch/arm/mach-imx/mx6/Kconfig
++++ b/arch/arm/mach-imx/mx6/Kconfig
+@@ -357,6 +357,13 @@ config TARGET_MX6ULL_14X14_EVK
+ 	select DM
+ 	select DM_THERMAL
+ 
++config TARGET_MYS6ULX
++	bool "Support MYiR MYS-6ULX"
++	select BOARD_LATE_INIT
++	select MX6ULL
++	select DM
++	select DM_THERMAL
++
+ config TARGET_NITROGEN6X
+ 	bool "nitrogen6x"
+ 	imply USB_HOST_ETHER
+@@ -523,6 +530,7 @@ source "board/samtec/vining_2000/Kconfig"
+ source "board/liebherr/display5/Kconfig"
+ source "board/liebherr/mccmon6/Kconfig"
+ source "board/logicpd/imx6/Kconfig"
++source "board/myir/mys6ulx/Kconfig"
+ source "board/seco/Kconfig"
+ source "board/sks-kinkel/sksimx6/Kconfig"
+ source "board/solidrun/mx6cuboxi/Kconfig"

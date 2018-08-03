@@ -1,0 +1,15 @@
+if TARGET_MYS6ULX
+
+config SYS_BOARD
+	default "mys6ulx"
+
+config SYS_VENDOR
+	default "myir"
+
+config SYS_CONFIG_NAME
+	default "mys6ulx"
+
+config IMX_CONFIG
+	default "board/myir/mys6ulx/imximage.cfg"
+
+endif
