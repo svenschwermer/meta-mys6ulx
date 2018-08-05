@@ -22,3 +22,10 @@ COMPATIBLE_MACHINE = "^(mx6|mx7)$"
 do_patch_append() {
 	cp ${THISDIR}/${PN}/imx6ull-mys6ulx.dts ${S}/arch/arm/boot/dts
 }
+
+# We need to pass it as param since kernel might support more then one
+# machine, with different entry points
+KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
+
+# Since our config file was generated using savedefconfig:
+KCONFIG_MODE = "--alldefconfig"
